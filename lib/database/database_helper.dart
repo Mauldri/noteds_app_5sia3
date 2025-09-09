@@ -78,6 +78,14 @@ createdAt TEXT DEFAULT CURRENT_TIMESTAMP
     return db.insert('notes', note.toMap());
   }
 
+  // get notes method
+  Future<List<NoteModel>> getNotes() async {
+    final db = await database;
+    final result = await db.query('notes');
+
+    return result.map((e) => NoteModel.fromMap(e)).toList();
+  }
+
 
 
 }

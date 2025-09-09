@@ -74,9 +74,11 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              if (formkey.currentState!.validate()) {}
+              if (formkey.currentState!.validate()) {
+                createNote();
+              }
             },
-            icon: Icon(Icons.check),
+            icon: const Icon(Icons.check),
           ),
         ],
       ),
